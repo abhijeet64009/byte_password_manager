@@ -1,0 +1,17 @@
+/* privacy page styles */
+
+:root{--bg:#0b0b0b;--muted:#c9d0d7;--gold:#d4af37}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
+.privacy-header{padding:18px;border-bottom:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+.privacy-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.back{color:var(--muted);text-decoration:none;font-weight:600}
+h1{margin:10px 0 0;color:#fff}
+.privacy-container{max-width:900px;margin:20px auto;padding:18px}
+.pp-intro p{margin:.6rem 0}
+.pp-section{background:rgba(255,255,255,0.01);border:1px solid rgba(212,175,55,0.04);padding:16px;border-radius:10px;margin:12px 0}
+.pp-section h2{color:#fff;margin:0 0 8px}
+.pp-section ul{margin:0 0 0 1.1rem;padding:0}
+.privacy-footer{text-align:center;padding:20px;border-top:1px solid rgba(255,255,255,0.03);margin-top:18px}
+a{color:var(--gold)}
