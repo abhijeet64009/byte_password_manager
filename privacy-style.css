@@ -11,3 +11,20 @@ h1{margin:10px 0 0;color:#fff}
 .pp-section h2{color:#fff;margin:0 0 8px}
 a{color:var(--grad-mid)}
 .privacy-footer{text-align:center;padding:20px;border-top:1px solid rgba(255,255,255,0.03);margin-top:18px}
+
+
+.privacy-header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  z-index: 50;
+}
+.pp-section {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.pp-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
