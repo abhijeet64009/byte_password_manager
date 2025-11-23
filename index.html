@@ -54,15 +54,17 @@
       <!-- feature cards (same structure) -->
       <article class="feature-card" data-key="encryption">
         <div class="feature-icon">
-          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42">
+          <!-- small animated SVG (gold pulse) -->
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
             <defs>
-              <linearGradient id="encG" x1="0" x2="1">
-                <stop offset="0" stop-color="#9BC4BC"/>
-                <stop offset="1" stop-color="#4B5043"/>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#d4af37"/>
+                <stop offset="1" stop-color="#b8860b"/>
               </linearGradient>
             </defs>
-            <rect x="14" y="26" width="36" height="24" rx="4" fill="url(#encG)"/>
-            <path d="M32 18v10" stroke="#0b0b0b" stroke-width="3" stroke-linecap="round"/>
+            <rect x="12" y="22" width="40" height="26" rx="4" fill="url(#g1)"/>
+            <rect x="22" y="28" width="20" height="12" rx="2" fill="#0d1117"/>
+            <path d="M32 16v8" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="feature-body">
