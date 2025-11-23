@@ -1,64 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Byte Password Manager</title>
 
-  <!-- Connect CSS + JS -->
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
-  <header>
-    <h1>Byte Password Manager</h1>
+
+  <!-- HEADER with app icon placeholder -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="app-icon" id="appIconPlaceholder" title="Replace /assets/icon.png to change icon">
+        <!-- default placeholder (you can replace /assets/icon.png with your icon) -->
+        <img src="assets/icon.png" alt="App icon" onerror="this.style.display='none'">
+        <div class="icon-fallback">BP</div>
+      </div>
+      <div class="site-title">
+        <h1>Byte Password Manager</h1>
+        <p class="tagline">Minimal. Secure. Premium.</p>
+      </div>
+      <nav class="header-cta">
+        <a class="btn-download" href="#" aria-label="Download on Google Play">Download</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Simple. Secure. Offline.</h2>
-    <p>The most secure offline password manager with AES encryption and a minimal user experience.</p>
-  </section>
-
-  <section class="features">
-    <div class="feature-box">
-      <h3>🔐 AES Encryption</h3>
-      <p>Every password, card, and secure note is protected using military-grade AES encryption stored locally on your device.</p>
+  <!-- HERO with background image -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h2>Security with Elegance</h2>
+      <p>Premium offline password manager — military-grade AES encryption, easy one-tap generation, and exportable encrypted backups.</p>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#">Get it on Google Play</a>
+        <a class="btn-secondary" href="privacy.html">Privacy Policy</a>
+      </div>
     </div>
-
-    <div class="feature-box">
-      <h3>⚡ One-Tap Password Generator</h3>
-      <p>Create ultra-strong passwords instantly with one tap. Smart, fast, and secure.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>📄 Encrypted Export</h3>
-      <p>Export all your passwords and data as a fully encrypted JSON file for safe offline backup.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🎨 Minimal UI</h3>
-      <p>A clean and modern dark-mode interface crafted for smooth usability and focus.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🔏 Offline First</h3>
-      <p>Your data never leaves your device. No cloud, no tracking, no servers — true privacy.</p>
-    </div>
-
-    <div class="feature-box">
-      <h3>🛡️ Premium Security Tools</h3>
-      <p>Fingerprint unlock, internal 2-factor authentication, unlimited saving, and more (available via IAP).</p>
+    <div class="hero-illustration" aria-hidden="true">
+      <!-- decorative image; replace assets/hero.jpg with your image -->
+      <img src="assets/hero.jpg" alt="" onerror="this.style.display='none'">
     </div>
   </section>
 
-  <div class="cta">
-    <a href="#">Download on Google Play</a>
-  </div>
+  <!-- FEATURE GRID -->
+  <main class="container">
+    <section class="features" id="features">
+      <!-- each card has: animated icon (SVG), title, description, arrow -->
+      <article class="feature-card" data-key="encryption">
+        <div class="feature-icon">
+          <!-- small animated SVG (gold pulse) -->
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#d4af37"/>
+                <stop offset="1" stop-color="#b8860b"/>
+              </linearGradient>
+            </defs>
+            <rect x="12" y="22" width="40" height="26" rx="4" fill="url(#g1)"/>
+            <rect x="22" y="28" width="20" height="12" rx="2" fill="#0d1117"/>
+            <path d="M32 16v8" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
 
-  <footer>
-    <p><a href="privacy.html">Privacy Policy</a></p>
-    <p>© 2025 Byte Password Manager</p>
+        <div class="feature-body">
+          <h3>AES Encryption</h3>
+          <p>Military-grade AES encryption stores everything locally — you control your data.</p>
+        </div>
+
+        <button class="feature-more" aria-label="More about AES Encryption">
+          <span class="arrow">➜</span>
+        </button>
+      </article>
+
+      <article class="feature-card" data-key="generator">
+        <div class="feature-icon">
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+            <circle cx="32" cy="32" r="18" fill="url(#g1)"/>
+            <path d="M22 30h20" stroke="#0d1117" stroke-width="3" stroke-linecap="round"/>
+            <path d="M22 36h20" stroke="#0d1117" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="feature-body">
+          <h3>One-Tap Generator</h3>
+          <p>Generate strong, unique passwords instantly. Customize length & character sets.</p>
+        </div>
+        <button class="feature-more" aria-label="More about Generator"><span class="arrow">➜</span></button>
+      </article>
+
+      <article class="feature-card" data-key="export">
+        <div class="feature-icon">
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+            <path d="M16 36v8a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4v-8" fill="none" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M32 18v22" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/><path d="M24 26l8-8 8 8" stroke="url(#g1)" stroke-width="3" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="feature-body">
+          <h3>Encrypted Export</h3>
+          <p>Backup and restore with an AES-encrypted JSON file — portable and private.</p>
+        </div>
+        <button class="feature-more" aria-label="More about Export"><span class="arrow">➜</span></button>
+      </article>
+
+      <article class="feature-card" data-key="ui">
+        <div class="feature-icon">
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+            <rect x="14" y="18" width="36" height="28" rx="3" fill="url(#g1)"/>
+            <rect x="20" y="24" width="12" height="6" rx="2" fill="#0d1117"/>
+            <rect x="36" y="24" width="8" height="6" rx="2" fill="#0d1117"/>
+          </svg>
+        </div>
+        <div class="feature-body">
+          <h3>Minimal Premium UI</h3>
+          <p>Focused and distraction-free interface — designed for clarity and quick access.</p>
+        </div>
+        <button class="feature-more" aria-label="More about UI"><span class="arrow">➜</span></button>
+      </article>
+
+      <article class="feature-card" data-key="premium">
+        <div class="feature-icon">
+          <svg class="svg-icon" viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+            <path d="M32 12l6 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2z" fill="url(#g1)"/>
+          </svg>
+        </div>
+        <div class="feature-body">
+          <h3>Premium Tools</h3>
+          <p>Fingerprint unlock, internal 2FA, unlimited saves — available via one-time or subscription.</p>
+        </div>
+        <button class="feature-more" aria-label="More about Premium"><span class="arrow">➜</span></button>
+      </article>
+    </section>
+
+    <!-- Screenshot / Insights carousel placeholder -->
+    <section class="insights" id="insights">
+      <h2 class="section-title">App Screenshots & Insights</h2>
+      <p class="section-sub">Add your app screenshots here to highlight the UI and core features.</p>
+
+      <div class="screenshot-grid">
+        <div class="shot placeholder">Screenshot 1</div>
+        <div class="shot placeholder">Screenshot 2</div>
+        <div class="shot placeholder">Screenshot 3</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CTA -->
+  <section class="final-cta">
+    <div class="final-inner">
+      <h3>Ready to secure your digital life?</h3>
+      <a class="btn-primary" href="#">Download Byte Password Manager</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <p>© 2025 Byte Password Manager</p>
+      </div>
+      <div class="footer-right">
+        <!-- contact opens email app -->
+        <a class="contact-mail" href="mailto:dev.abhi.eo@gmail.com?subject=Byte%20Password%20Manager%20Inquiry">Contact</a>
+      </div>
+    </div>
   </footer>
 
 </body>
