@@ -15,7 +15,6 @@
     <div class="header-inner">
       <div class="app-icon" id="appIconPlaceholder" title="Replace /assets/icon.png to change icon">
         <img src="assets/icon.png" alt="App icon" onerror="this.style.display='none'">
-        <div class="icon-fallback">BPM</div>
       </div>
 
       <div class="site-title">
@@ -28,43 +27,44 @@
         <!-- <a id="downloadBtn" class="btn-download" href="#" aria-label="Download on Google Play">Download</a> -->
         <a href="#" class="btn-download" id="btnDownloadHeader">
             <span class="btn-text">Download</span>
+            
             <!-- Gradient Aqua Download Arrow (SVG) -->
-            <svg class="btn-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-            
-              <!-- Glow behind arrow -->
-              <circle cx="32" cy="32" r="28" fill="url(#bgGlow)" opacity="0.38"/>
-            
-              <!-- Arrow body -->
-              <path d="M32 12v28"
+            <svg class="btn-icon" width="32" height="32" viewBox="0 0 60 60" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Glow behind arrow -->
+            <circle cx="32" cy="32" r="28" fill="url(#bgGlow)" opacity="0.38"/>
+
+            <!-- Arrow body -->
+            <path d="M32 12v28"
                     stroke="url(#arrowGrad)"
                     stroke-width="6"
                     stroke-linecap="round"/>
-            
-              <!-- Arrow head -->
-              <path d="M20 34l12 12 12-12"
+
+            <!-- Arrow head -->
+            <path d="M20 34l12 12 12-12"
                     stroke="url(#arrowGrad)"
                     stroke-width="6"
                     stroke-linecap="round"
                     stroke-linejoin="round"/>
-            
-              <!-- Gradients -->
-              <defs>
+
+            <!-- Gradients -->
+            <defs>
                 <!-- background glow -->
                 <radialGradient id="bgGlow" cx="0" cy="0" r="1"
-                  gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(32 32) scale(32)">
-                  <stop stop-color="#9BC4BC"/>
-                  <stop offset="1" stop-color="#0A0F10"/>
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(32 32) scale(32)">
+                <stop stop-color="#9BC4BC"/>
+                <stop offset="1" stop-color="#0A0F10"/>
                 </radialGradient>
-            
+
                 <!-- arrow gradient -->
                 <linearGradient id="arrowGrad" x1="20" y1="12" x2="44" y2="48"
-                  gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#9BC4BC"/>
-                  <stop offset="1" stop-color="#7FAEA3"/>
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#9BC4BC"/>
+                <stop offset="1" stop-color="#7FAEA3"/>
                 </linearGradient>
-              </defs>
+            </defs>
             </svg>
         </a>
       </nav>
