@@ -1,32 +1,34 @@
+/* ---------- THEME COLORS ---------- */
 :root {
-    --bg: #0b0b0b;
-    --text: #e9f5f1;
+    --bg-dark: #0c0f0e;
+    --text-light: #e8f7f4;
     --accent1: #9BC4BC;
     --accent2: #4B5043;
 }
 
-/* Base */
+/* ---------- GLOBAL ---------- */
 body {
     margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--text);
+    background: linear-gradient(135deg, #4B5043 0%, #9BC4BC 50%, #4B5043 100%);
+    background-attachment: fixed;
     font-family: "Inter", sans-serif;
-    -webkit-font-smoothing: antialiased;
+    color: var(--text-light);
+    line-height: 1.65;
 }
 
-/* Glass Header */
-.privacy-header {
+/* ---------- GLASS HEADER ---------- */
+.header {
     position: sticky;
     top: 0;
-    z-index: 100;
+    width: 100%;
     backdrop-filter: blur(16px);
-    background: linear-gradient(180deg, rgba(155,196,188,0.10), rgba(75,80,67,0.05), transparent);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 16px 0;
+    z-index: 100;
 }
 
-.privacy-inner {
+.header-inner {
     max-width: 900px;
     margin: auto;
     padding: 0 20px;
@@ -35,81 +37,81 @@ body {
     gap: 14px;
 }
 
-.privacy-inner h1 {
-    margin: 0;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.back {
-    font-weight: 600;
-    text-decoration: none;
+.header-inner a {
     color: var(--accent1);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 
-/* Main Container */
-.privacy-container {
+.header-inner h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+/* ---------- PAGE CONTAINER ---------- */
+.container {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Cards */
-.pp-card {
-    background: linear-gradient(
-        180deg,
-        rgba(155,196,188,0.13),
-        rgba(75,80,67,0.1),
-        rgba(155,196,188,0.05)
-    );
-    border: 1px solid rgba(155,196,188,0.12);
+/* ---------- GLASS CARDS ---------- */
+.card {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(22px);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 16px;
-    padding: 22px 24px;
-    margin: 18px 0;
-    transition: .25s ease;
-    box-shadow: 0 0 0 transparent;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    transition: 0.25s ease;
 }
 
-.pp-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.55);
-    border-color: rgba(155,196,188,0.22);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.45);
 }
 
-.pp-card h2 {
+.card h2 {
     margin-top: 0;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-size: 1.3rem;
+    color: var(--accent1);
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
-/* Footer */
-.privacy-footer {
+.intro {
+    font-size: 1.05rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
     text-align: center;
+    padding: 25px 0;
     margin-top: 40px;
-    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #dce9e6;
+    background: rgba(0,0,0,0.15);
     backdrop-filter: blur(12px);
-    background: linear-gradient(
-        180deg,
-        transparent,
-        rgba(155,196,188,0.08)
-    );
-    border-top: 1px solid rgba(255,255,255,0.06);
-    color: var(--text);
-    font-size: .9rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Responsive */
+ul {
+    margin-top: 12px;
+    padding-left: 20px;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 600px) {
-    .privacy-inner {
+    .header-inner {
         justify-content: flex-start;
     }
 
-    .pp-card {
+    .card {
         padding: 18px;
     }
 
-    .privacy-container {
+    .container {
         margin-top: 30px;
     }
 }
