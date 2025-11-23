@@ -1,31 +1,36 @@
-/* ---------- THEME COLORS ---------- */
+/* THEME COLORS (unchanged from your previous CSS) */
 :root {
-    --bg-dark: #0c0f0e;
-    --text-light: #e8f7f4;
+    --bg: #0b0b0b;
+    --text: #e9f5f1;
     --accent1: #9BC4BC;
     --accent2: #4B5043;
 }
 
-/* ---------- GLOBAL ---------- */
+/* BASE */
 body {
     margin: 0;
-    background: linear-gradient(135deg, #4B5043 0%, #9BC4BC 50%, #4B5043 100%);
-    background-attachment: fixed;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
     font-family: "Inter", sans-serif;
-    color: var(--text-light);
-    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
 }
 
-/* ---------- GLASS HEADER ---------- */
+/* ---------- GLASS HEADER (adjusted for new privacy.html classes) ---------- */
 .header {
     position: sticky;
     top: 0;
-    width: 100%;
-    backdrop-filter: blur(16px);
-    background: rgba(0, 0, 0, 0.25);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 16px 0;
     z-index: 100;
+    backdrop-filter: blur(16px);
+    background: linear-gradient(
+        180deg,
+        rgba(155,196,188,0.10),
+        rgba(75,80,67,0.05),
+        transparent
+    );
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 20px 0;
 }
 
 .header-inner {
@@ -37,71 +42,88 @@ body {
     gap: 14px;
 }
 
-.header-inner a {
-    color: var(--accent1);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
 .header-inner h1 {
     margin: 0;
-    font-size: 1.35rem;
     font-weight: 700;
+    color: var(--text);
 }
 
-/* ---------- PAGE CONTAINER ---------- */
+.header-inner a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--accent1);
+    transition: 0.25s ease;
+}
+
+.header-inner a:hover {
+    opacity: 0.8;
+}
+
+/* ---------- CONTAINER FIXED FOR NEW HTML ---------- */
 .container {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* ---------- GLASS CARDS ---------- */
+/* ---------- CARD STYLING (adapted from your previous .pp-card) ---------- */
 .card {
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(22px);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: linear-gradient(
+        180deg,
+        rgba(155,196,188,0.13),
+        rgba(75,80,67,0.1),
+        rgba(155,196,188,0.05)
+    );
+    border: 1px solid rgba(155,196,188,0.12);
     border-radius: 16px;
-    padding: 22px 26px;
-    margin-bottom: 24px;
+    padding: 22px 24px;
+    margin: 18px 0;
     transition: 0.25s ease;
+    box-shadow: 0 0 0 transparent;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+    border-color: rgba(155,196,188,0.22);
 }
 
 .card h2 {
     margin-top: 0;
-    color: var(--accent1);
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 1.28rem;
     font-weight: 700;
-    font-size: 1.25rem;
 }
 
+/* ---------- INTRO PARAGRAPH STYLE ---------- */
 .intro {
     font-size: 1.05rem;
 }
 
-/* ---------- FOOTER ---------- */
+/* ---------- FOOTER FIXED ---------- */
 .footer {
     text-align: center;
-    padding: 25px 0;
     margin-top: 40px;
-    font-size: 0.9rem;
-    color: #dce9e6;
-    background: rgba(0,0,0,0.15);
+    padding: 20px 0;
     backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(155,196,188,0.08)
+    );
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--text);
+    font-size: 0.9rem;
 }
 
+/* LIST FIX */
 ul {
     margin-top: 12px;
     padding-left: 20px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ---------- RESPONSIVE FIX ---------- */
 @media (max-width: 600px) {
     .header-inner {
         justify-content: flex-start;
