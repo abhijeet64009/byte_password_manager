@@ -30,7 +30,7 @@ body{
 .header-inner{
   max-width:1100px;margin:0 auto;display:flex;align-items:center;padding:14px 20px;gap:16px;
 }
-.app-icon{width:72px;height:64px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
+.app-icon{width:64px;height:64px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s}
 .app-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .app-icon .icon-fallback{font-weight:800;color:var(--grad-mid);font-size:20px}
 .app-icon:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.6)}
