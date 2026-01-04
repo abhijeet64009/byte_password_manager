@@ -80,3 +80,26 @@ body{margin:0;font-family:Inter,Arial;background:#071014;color:#dfe7e3}
   background:#9BC4BC;
   transform:scale(1.2);
 }
+
+/* Loader wrapper */
+.loader-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 0;
+}
+
+/* Circular spinner */
+.spinner{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  border:4px solid rgba(255,255,255,0.15);
+  border-top-color:#9BC4BC;
+  animation:spin 1s linear infinite;
+}
+
+/* Spin animation */
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
