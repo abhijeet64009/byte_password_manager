@@ -5,6 +5,8 @@
 
 const gallery = document.getElementById("gallery");
 
+const loader = document.getElementById("loader");
+
 const BASE_PATH = "assets/screenshots/";
 const MAX_SHOTS = 30;
 const MAX_VARIANTS = 5;
@@ -56,6 +58,8 @@ function renderGallery() {
   groups
     .sort((a, b) => a.index - b.index)
     .forEach(g => gallery.appendChild(createShotBlock(g.variants)));
+
+  loader.style.display = "none";
 }
 
 function createShotBlock(images) {
