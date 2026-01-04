@@ -9,6 +9,9 @@ const BASE_PATH = "assets/screenshots/";
 const MAX_SHOTS = 30;
 const MAX_VARIANTS = 5;
 
+const groups = [];
+let processed = 0;
+
 for (let i = 1; i <= MAX_SHOTS; i++) {
   loadShotGroup(i);
 }
@@ -17,7 +20,11 @@ function loadShotGroup(index) {
   const baseImg = `${BASE_PATH}shot${index}.jpg`;
 
   checkImage(baseImg, exists => {
-    if (!exists) return;
+    if (!exists) {
+      processed++;
+      checkDone();
+      return;
+    }
 
     const variants = [baseImg];
     let checked = 0;
@@ -30,11 +37,25 @@ function loadShotGroup(index) {
         if (ok) variants.push(variant);
 
         if (checked === MAX_VARIANTS) {
-          createShotBlock(variants);
+          groups.push({ index, variants });
+          processed++;
+          checkDone();
         }
       });
     }
   });
+}
+
+function checkDone() {
+  if (processed === MAX_SHOTS) {
+    renderGallery();
+  }
+}
+
+function renderGallery() {
+  groups
+    .sort((a, b) => a.index - b.index)
+    .forEach(g => gallery.appendChild(createShotBlock(g.variants)));
 }
 
 function createShotBlock(images) {
@@ -42,40 +63,39 @@ function createShotBlock(images) {
   container.className = "gitem";
 
   if (images.length === 1) {
-    const img = createImg(images[0]);
-    container.appendChild(img);
-  } else {
-    const slider = document.createElement("div");
-    slider.className = "slider";
-
-    const track = document.createElement("div");
-    track.className = "slider-track";
-
-    const dots = document.createElement("div");
-    dots.className = "slider-dots";
-
-    images.forEach((src, idx) => {
-      const img = createImg(src);
-      track.appendChild(img);
-
-      const dot = document.createElement("span");
-      if (idx === 0) dot.classList.add("active");
-      dots.appendChild(dot);
-    });
-
-    track.addEventListener("scroll", () => {
-      const index = Math.round(track.scrollLeft / track.clientWidth);
-      dots.querySelectorAll("span").forEach((d, i) =>
-        d.classList.toggle("active", i === index)
-      );
-    });
-
-    slider.appendChild(track);
-    slider.appendChild(dots);
-    container.appendChild(slider);
+    container.appendChild(createImg(images[0]));
+    return container;
   }
 
-  gallery.appendChild(container);
+  const slider = document.createElement("div");
+  slider.className = "slider";
+
+  const track = document.createElement("div");
+  track.className = "slider-track";
+
+  const dots = document.createElement("div");
+  dots.className = "slider-dots";
+
+  images.forEach((src, idx) => {
+    track.appendChild(createImg(src));
+
+    const dot = document.createElement("span");
+    if (idx === 0) dot.classList.add("active");
+    dots.appendChild(dot);
+  });
+
+  track.addEventListener("scroll", () => {
+    const i = Math.round(track.scrollLeft / track.clientWidth);
+    dots.querySelectorAll("span").forEach((d, idx) =>
+      d.classList.toggle("active", idx === i)
+    );
+  });
+
+  slider.appendChild(track);
+  slider.appendChild(dots);
+  container.appendChild(slider);
+
+  return container;
 }
 
 function createImg(src) {
@@ -86,9 +106,9 @@ function createImg(src) {
   return img;
 }
 
-function checkImage(src, callback) {
+function checkImage(src, cb) {
   const img = new Image();
-  img.onload = () => callback(true);
-  img.onerror = () => callback(false);
+  img.onload = () => cb(true);
+  img.onerror = () => cb(false);
   img.src = src;
 }
