@@ -5,3 +5,31 @@ body{margin:0;font-family:Inter,Arial;background:#071014;color:#dfe7e3}
 .gitem{overflow:hidden;border-radius:12px;background:#0e0f10;border:1px solid rgba(255,255,255,0.02)}
 .gitem img{width:100%;height:auto;object-fit:contain;display:block;border-radius:8px;}
 .gitem.empty{display:none}
+
+/* Modern back button */
+.back-btn{
+  width:42px;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  color:#dfe7e3;
+  cursor:pointer;
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    box-shadow .2s ease;
+}
+
+.back-btn:hover{
+  background:rgba(255,255,255,0.08);
+  transform:translateX(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,.45);
+}
+
+.back-btn:active{
+  transform:scale(0.95);
+}
