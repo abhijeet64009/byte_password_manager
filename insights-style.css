@@ -65,6 +65,7 @@ body{margin:0;font-family:Inter,Arial;background:#071014;color:#dfe7e3}
   justify-content:center;
   gap:6px;
   margin-top:10px;
+  margin-bottom:5px;
 }
 
 .slider-dots span{
